@@ -2,6 +2,10 @@ html {
     background-color: black;
 }
 
+p {
+    color: white;
+}
+
 .BackgroundVideo {
     position: fixed;
     width: 100vw;
@@ -53,11 +57,11 @@ html {
     letter-spacing: -.09em;
     height: 100%;
   }
-  
+
   .MainContent {
     position: relative;
     z-index: 2;
-    max-width: 768px;
+    max-width: 1080px;
     padding: 20px;
     margin: 50vh auto 20px auto;
   }
