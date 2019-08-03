@@ -1,6 +1,7 @@
 var params = new URLSearchParams();
 params.append("client_id", "");
 params.append("redirect_uri", "http://localhost:8080/");
+params.append("show_dialog", true);
 
 console.log(params.toString());
 
