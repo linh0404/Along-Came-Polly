@@ -57,18 +57,3 @@ $.ajax({
     });
   }
 });
-
-$.ajax({
-  url: "https://api.spotify.com/v1/me/top/currently-playing",
-  type: "GET",
-  beforeSend: function(xhr) {
-    xhr.setRequestHeader("Authorization", "Bearer " + _token);
-  },
-  success: function(data) {
-    // Do something with the returned data
-    data.items.map(function(artist) {
-      let item = $("<li>" + artist.name + "</li>");
-      item.appendTo($("#top-plays"));
-    });
-  }
-});
