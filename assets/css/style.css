@@ -6,6 +6,9 @@ p {
   color: white;
 }
 
+.container > p {
+  color: black;
+}
 .BackgroundVideo {
   position: absolute;
   width: 100vw;
