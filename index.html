@@ -19,15 +19,32 @@
     <body>
          <!-- Link to Moment.js should go here -->
         <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-        <div class="container">
-            <div class="jumbotron">
-              <h1 class="“display-4”">Festivals 4 You</h1>
-              <p class="“lead”">
-                MOVING YOU TO THE NEAREST FESTIVAL
-              </p>
-            </div>
-        </div>
-          
+        <header class="BackgroundVideo">
+          <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920px" height="1080px" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <mask id="mask" x="0" y="0" width="1920" height="1080" >
+                <rect x="0" y="0" width="1920" height="1080"/>
+                <text x="960" y="1em">Festivals</text>
+                <text x="960" y="90%">_____4U</text>
+              </mask>
+            </defs>
+            <rect x="0" y="0" width="1920" height="1080"/>
+          </svg>
+          <video autoplay loop muted>
+             <source src="assets/images/banner_video.mov">
+          </video>
+        </header>
+        <article class="MainContent">
+          <p>Ever seen a poster for an event that you would have been really keen to go to but missed out? Never again… </p>
+          <form class="form-inline">
+            <img src="assets/images/spotify_logo.png" alt="Spotify_logo">
+            <label class="sr-only" for="inlineFormInputName2">Username</label>
+            <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Username">
+            <label class="sr-only" for="inlineFormInputName2">Password</label>
+            <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Password">
+            <button type="submit" class="btn btn-success mb-2">Login</button>
+          </form>
+        </article>
         
  
         <!-- javascript -->
