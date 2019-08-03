@@ -7,7 +7,7 @@ p {
 }
 
 .BackgroundVideo {
-    position: fixed;
+    position: absolute;
     width: 100vw;
     height: 70vh;
     overflow: hidden;
