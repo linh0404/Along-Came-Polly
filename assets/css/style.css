@@ -53,3 +53,11 @@ html {
     letter-spacing: -.09em;
     height: 100%;
   }
+  
+  .MainContent {
+    position: relative;
+    z-index: 2;
+    max-width: 768px;
+    padding: 20px;
+    margin: 50vh auto 20px auto;
+  }
