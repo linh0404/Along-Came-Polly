@@ -1,1 +1,52 @@
 <!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>Festivals 4 You</title>
+        <!-- reset.css -->
+        <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+        <!-- jquery -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- bootstrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!-- Firebase References -->
+        <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+        <!-- style.css -->
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+         <!-- Link to Moment.js should go here -->
+        <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+        <header class="BackgroundVideo">
+          <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920px" height="1080px" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <mask id="mask" x="0" y="0" width="1920" height="1080" >
+                <rect x="0" y="0" width="1920" height="1080"/>
+                <text x="960" y="1em">Festivals</text>
+                <text x="960" y="90%">_____4U</text>
+              </mask>
+            </defs>
+            <rect x="0" y="0" width="1920" height="1080"/>
+          </svg>
+          <video autoplay loop muted>
+             <source src="assets/images/banner_video.mov">
+          </video>
+        </header>
+        <article class="MainContent">
+          <p>Ever seen a poster for an event that you would have been really keen to go to but missed out? Never again… </p>
+          <form class="form-inline">
+            <img src="assets/images/spotify_logo.png" alt="Spotify_logo">
+            <label class="sr-only" for="inlineFormInputName2">Username</label>
+            <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Username">
+            <label class="sr-only" for="inlineFormInputName2">Password</label>
+            <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Password">
+            <button type="submit" class="btn btn-success mb-2">Login</button>
+          </form>
+        </article>
+        
+ 
+        <!-- javascript -->
+        <script src="assets/javascript/app.js"></script>
+    </body>
