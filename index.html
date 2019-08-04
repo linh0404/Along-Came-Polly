@@ -63,8 +63,28 @@
       Here are your top tracks on Spotify:
       <ol id="top-tracks"></ol>
     </p>
+  </div>  
 
-  </div>
+  <div class="container">
+    <div class="row">
+      <div class="input-group mb-3 col-md-12">
+        <input
+          type="text"
+          id="artistSearchInput"
+          class="form-control"
+          placeholder="search here"
+          aria-label="search here"
+          aria-describedby="button-addon2"/>
+
+      <div class="input-group-append">
+        <input id="findEvent" type="submit" value="Find Event"/>
+      </div>
+      </div>
+    </div>
+    <div class="row">
+      <div id="displaySearchResult"></div>
+    </div>
+    </div>
   <script src="./assets/js/spotify.js"></script>
   <script src="./assets/js/ticketmaster.js"></script>
 </body>
