@@ -1,5 +1,5 @@
 // function to call and display events from Ticketmaster
-function eventFromTicketMaster() {
+function eventFromTicketMaster(artist) {
   // var artist = $(this).attr("data-event");
 
   //queryURL is the url we'll use to query the API
@@ -10,7 +10,7 @@ function eventFromTicketMaster() {
     url: queryURL,
     method: "GET"
   }).then(function(response) {
-    console.log(url);
+    // console.log(url);
     console.log(response);
 
     // to access an array of object using square brackets
@@ -35,7 +35,7 @@ $("#findEvent").on("click", function(event) {
   event.preventDefault();
 
   // grab the user search input from textbox
-  var grabSearchInput = $("#searchEvent")
+  var grabSearchInput = $("#artistSearchInput")
     .val()
     .trim();
 

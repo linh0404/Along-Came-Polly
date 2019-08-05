@@ -68,3 +68,8 @@ p {
   padding: 20px;
   margin: 50vh auto 20px auto;
 }
+
+.artist-image {
+  width: 500px;
+  height: auto;
+}
