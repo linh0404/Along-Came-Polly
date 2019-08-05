@@ -62,7 +62,18 @@ body {
   background-color: black;
 }
 
-p {
+h3,
+h4,
+p,
+ol {
   color: white;
   text-align: center;
+}
+
+p {
+  font-weight: bold;
+}
+
+button {
+  align-content: center;
 }
