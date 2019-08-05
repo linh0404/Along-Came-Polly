@@ -32,13 +32,13 @@
           <text x="960" y="90%">_____4U</text>
         </mask>
       </defs>
-      <rect x="0" y="0" width="1920" height="1080" />
+      <rect x="0" y="0" width="1920" height="960" />
     </svg>
     <video autoplay loop muted>
       <source src="assets/images/banner_video.mov" />
     </video>
   </header>
-  <article class="MainContent">
+  <div class="MainContent">
     <p>
       Ever seen a poster for an event that you would have been really keen to
       go to but missed out? Never again…
@@ -49,10 +49,10 @@
       <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Username" />
       <label class="sr-only" for="inlineFormInputName2">Password</label>
       <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Password" /> -->
-      <button type="submit" class="btn btn-success mb-2"><img src="assets/images/spotify_logo.png" width="100"
-          height="100" alt="Spotify_logo" /></button>
+      <button type="submit"><img src="assets/images/spotify.png" width="170"
+          height="50" alt="Spotify_logo" /></button>
     </form>
-  </article>
+  </div>
 
   <div class="container">
     <p>
@@ -69,14 +69,7 @@
   <div class="container">
     <div class="row">
       <div class="input-group mb-3 col-md-12">
-        <input
-          type="text"
-          id="artistSearchInput"
-          class="form-control"
-          placeholder="search here"
-          aria-label="search here"
-          aria-describedby="button-addon2"/>
-
+        <input type="text" id="artistSearchInput" class="form-control" placeholder="search here" aria-label="search here" aria-describedby="button-addon2"/>
       <div class="input-group-append">
         <input id="findEvent" type="submit" value="Find Event"/>
       </div>
@@ -86,8 +79,8 @@
       <div id="displaySearchResult"></div>
     </div>
     </div>
-  <script src="./assets/js/spotify.js"></script>
-  <script src="./assets/js/ticketmaster.js"></script>
+  <script src="./assets/js/spotify_.js"></script>
+  <script src="./assets/js/ticketmaster_.js"></script>
 </body>
 
 </html>
