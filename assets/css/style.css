@@ -43,7 +43,7 @@
 }
 
 .BackgroundVideo svg text {
-  font-family: "Raleway", sans-serif;
+  font-family: 'Hind Guntur', sans-serif;
   font-weight: 800;
   font-size: 35em;
   letter-spacing: -0.09em;
@@ -66,14 +66,20 @@ h3,
 h4,
 p,
 ol {
+  font-family: 'Hind Guntur', sans-serif;
   color: white;
   text-align: center;
 }
 
 p {
+  font-family: 'Hind Guntur', sans-serif;
   font-weight: bold;
 }
 
-button {
-  align-content: center;
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
+
+
