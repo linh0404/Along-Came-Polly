@@ -1,4 +1,4 @@
-$(".btn").on("click", function(e) {
+$("#spotify").on("click", function(e) {
   e.preventDefault()
 
 const hash = window.location.hash
