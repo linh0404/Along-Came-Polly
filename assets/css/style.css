@@ -64,7 +64,7 @@
 }
 
 body {
-  background-color: black;
+  background-color: #151515;
 }
 
 h3,
@@ -90,4 +90,5 @@ p {
 #spotify {
   background-color: rgba(0,0,0,0);
   border: none;
+  box-shadow:none;
 }
