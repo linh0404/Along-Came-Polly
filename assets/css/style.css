@@ -1,14 +1,3 @@
-html {
-  background-color: black;
-}
-
-p {
-  color: white;
-}
-
-.container > p {
-  color: black;
-}
 .BackgroundVideo {
   position: absolute;
   width: 100vw;
@@ -54,7 +43,7 @@ p {
 }
 
 .BackgroundVideo svg text {
-  font-family: "Raleway", sans-serif;
+  font-family: 'Hind Guntur', sans-serif;
   font-weight: 800;
   font-size: 35em;
   letter-spacing: -0.09em;
@@ -72,4 +61,28 @@ p {
 .artist-image {
   width: 500px;
   height: auto;
+}
+
+body {
+  background-color: black;
+}
+
+h3,
+h4,
+p,
+ol {
+  font-family: 'Hind Guntur', sans-serif;
+  color: white;
+  text-align: center;
+}
+
+p {
+  font-family: 'Hind Guntur', sans-serif;
+  font-weight: bold;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }

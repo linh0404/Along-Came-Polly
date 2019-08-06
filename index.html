@@ -20,6 +20,8 @@
   <!-- style.css -->
   <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css?family=Hind+Guntur&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -42,39 +44,38 @@
     </video>
   </header>
   <article class="MainContent">
-    <p>
-      Ever seen a poster for an event that you would have been really keen to
-      go to but missed out? Never again…
-    </p>
+    <h3>
+      Never miss an event again
+    </h3>
     <form class="form-inline">
       <!-- <img src="assets/images/spotify_logo.png" width="250" alt="Spotify_logo" /> -->
       <!-- <label class="sr-only" for="inlineFormInputName2">Username</label>
       <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Username" />
       <label class="sr-only" for="inlineFormInputName2">Password</label>
       <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Password" /> -->
-      <button type="submit" class="btn btn-success mb-2"><img src="assets/images/login.png" class="center" width="250"
-          height="50" alt="Spotify_logo"/></button>
+      <button type="submit" class="mb-2"><img src="assets/images/connect.png" class="center" width="280" height="50" alt="Spotify_logo"/></button>
     </form>
   </article>
 
   <div class="container">
-    <p>
-      Here are your top artists on Spotify:
-      <ol id="top-artists"></ol>
-    </p>
-    <br>
-    <p>
-      Here are your top tracks on Spotify:
-      <ol id="top-tracks"></ol>
-    </p>
-  </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+          <h4>Here are your top artists on Spotify:</h4>
+            <ol id="top-artists"></ol>
+        </div>
+        <div class="col-sm">
+          <h4>Here are your top tracks on Spotify:</h4>
+            <ol id="top-tracks"></ol>
+          
+      </div>
+    </div>
+  </div> 
 
   <div class="container">
     <div class="row">
       <div class="input-group mb-3 col-md-12">
-        <input type="text" id="artistSearchInput" class="form-control" placeholder="search here"
-          aria-label="search here" aria-describedby="button-addon2" />
-
+        <input type="text" id="artistSearchInput" class="form-control" placeholder="For more events, search here" aria-label="search here" aria-describedby="button-addon2" />
         <div class="input-group-append">
           <input id="findEvent" type="submit" value="Find Event" />
         </div>
