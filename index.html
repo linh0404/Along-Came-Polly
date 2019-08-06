@@ -8,6 +8,9 @@
   <link rel="stylesheet" type="text/css" href="assets/css/reset.css" />
   <!-- jquery -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- jquery-modal -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.2/jquery.modal.js"
+    integrity="sha256-Xn32xgoXnSJx7yF1Tc0WFkI8WbupFklylorHLBeu0CA=" crossorigin="anonymous"></script>
   <!-- bootstrap -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
@@ -17,8 +20,8 @@
   <!-- style.css -->
   <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css?family=Hind+Guntur&display=swap" rel="stylesheet">
+</head>
+
 <body>
   <!-- Link to Moment.js should go here -->
   <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
@@ -29,23 +32,20 @@
         <mask id="mask" x="0" y="0" width="1920" height="1080">
           <rect x="0" y="0" width="1920" height="1080" />
           <text x="960" y="1em">Festivals</text>
-          <text x="960" y="90%">____4U</text>
+          <text x="960" y="90%">_____4U</text>
         </mask>
       </defs>
-      <rect x="0" y="0" width="1920" height="960" />
+      <rect x="0" y="0" width="1920" height="1080" />
     </svg>
     <video autoplay loop muted>
       <source src="assets/images/banner_video_light.mov" />
     </video>
   </header>
-  <div class="MainContent">
-    <h3>
+  <article class="MainContent">
+    <p>
       Ever seen a poster for an event that you would have been really keen to
       go to but missed out? Never again…
-    </h3>
-    <br>
-    <br>
-    <br>
+    </p>
     <form class="form-inline">
       <!-- <img src="assets/images/spotify_logo.png" width="250" alt="Spotify_logo" /> -->
       <!-- <label class="sr-only" for="inlineFormInputName2">Username</label>
@@ -55,41 +55,35 @@
       <button type="submit" class="btn btn-success mb-2"><img src="assets/images/login.png" class="center" width="250"
           height="50" alt="Spotify_logo"/></button>
     </form>
+  </article>
+
+  <div class="container">
+    <p>
+      Here are your top artists on Spotify:
+      <ol id="top-artists"></ol>
+    </p>
+    <br>
+    <p>
+      Here are your top tracks on Spotify:
+      <ol id="top-tracks"></ol>
+    </p>
   </div>
-  <br>
-  <br>
-  <div class="container text-center">
-    <div class="row">
-      <div class="col-sm">
-        <h4>
-          Here are your top artists on Spotify:
-        </h4>
-        <ol id="top-artists"></ol>
-      </div>
-      <div class="col-sm">
-        <h4>
-          Here are your top tracks on Spotify:
-        </h4>
-        <ol id="top-tracks"></ol>
-      </div>
-    </div>
-  </div>
-  <br>
-  <br>
-  <br>
+
   <div class="container">
     <div class="row">
       <div class="input-group mb-3 col-md-12">
-        <input type="text" id="artistSearchInput" class="form-control" placeholder="Fore more events, search here" aria-label="search here" aria-describedby="button-addon2"/>
-      <div class="input-group-append">
-        <input id="findEvent" type="submit" value="Find Event"/>
-      </div>
+        <input type="text" id="artistSearchInput" class="form-control" placeholder="search here"
+          aria-label="search here" aria-describedby="button-addon2" />
+
+        <div class="input-group-append">
+          <input id="findEvent" type="submit" value="Find Event" />
+        </div>
       </div>
     </div>
     <div class="row">
       <div id="displaySearchResult"></div>
     </div>
-    </div>
+  </div>
   <script src="./assets/js/spotify.js"></script>
   <script src="./assets/js/ticketmaster.js"></script>
 </body>
