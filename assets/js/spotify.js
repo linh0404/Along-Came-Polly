@@ -1,20 +1,22 @@
+var topArtists = [];
+
 $("#spotify").on("click", function(e) {
-  e.preventDefault()
+  e.preventDefault();
 
-const hash = window.location.hash
-  .substring(1)
-  .split("&")
-  .reduce(function(initial, item) {
-    if (item) {
-      var parts = item.split("=");
-      initial[parts[0]] = decodeURIComponent(parts[1]);
-    }
-    return initial;
-  }, {});
-window.location.hash = "";
+  const hash = window.location.hash
+    .substring(1)
+    .split("&")
+    .reduce(function(initial, item) {
+      if (item) {
+        var parts = item.split("=");
+        initial[parts[0]] = decodeURIComponent(parts[1]);
+      }
+      return initial;
+    }, {});
+  window.location.hash = "";
 
-// Set token
-let _token = hash.access_token;
+  // Set token
+  let _token = hash.access_token;
 
   const authEndpoint = "https://accounts.spotify.com/authorize";
 
@@ -29,22 +31,23 @@ let _token = hash.access_token;
       "%20"
     )}&response_type=token&show_dialog=true`;
   }
-// Make a call using the token
-$.ajax({
-  url: "https://api.spotify.com/v1/me/top/artists",
-  type: "GET",
-  beforeSend: function(xhr) {
-    xhr.setRequestHeader("Authorization", "Bearer " + _token);
-  },
-  success: function(data) {
-    // Do something with the returned data
-    
-    data.items.map(function(artist) {
-      let item = $("<li>" + artist.name + "</li>");
-      item.appendTo($("#top-artists"));
-    });
-  }
-})
+  // Make a call using the token
+  $.ajax({
+    url: "https://api.spotify.com/v1/me/top/artists",
+    type: "GET",
+    beforeSend: function(xhr) {
+      xhr.setRequestHeader("Authorization", "Bearer " + _token);
+    },
+    success: function(data) {
+      // Do something with the returned data
+      topArtists = data.items;
+
+      data.items.map(function(artist) {
+        let item = $("<li>" + artist.name + "</li>");
+        item.appendTo($("#top-artists"));
+      });
+    }
+  });
 
   $.ajax({
     url: "https://api.spotify.com/v1/me/top/tracks",
@@ -60,4 +63,4 @@ $.ajax({
       });
     }
   });
-})
+});
