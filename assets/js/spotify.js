@@ -1,3 +1,6 @@
+$(".btn").on("click", function(e) {
+  e.preventDefault()
+
 const hash = window.location.hash
   .substring(1)
   .split("&")
@@ -36,6 +39,7 @@ $.ajax({
   },
   success: function(data) {
     // Do something with the returned data
+    
     data.items.map(function(artist) {
       let item = $("<li>" + artist.name + "</li>");
       item.appendTo($("#top-artists"));
@@ -50,10 +54,12 @@ $.ajax({
     xhr.setRequestHeader("Authorization", "Bearer " + _token);
   },
   success: function(data) {
+    
     // Do something with the returned data
     data.items.map(function(artist) {
       let item = $("<li>" + artist.name + "</li>");
       item.appendTo($("#top-tracks"));
     });
   }
+});
 });
