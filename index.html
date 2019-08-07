@@ -45,44 +45,45 @@
     </video>
   </header>
 
-  <article class="MainContent">
+  <article class="spotify_banner">
     <h3>
       Never miss an event again
     </h3>
     <br>
     <form class="text-center">
-      <button type="submit" id="spotify" class="mb-2"><img src="assets/images/connect.png" class="center" width="280" height="50" alt="Spotify_logo"/></button> 
+      <button type="submit" id="spotify" class="mb-2"><img src="assets/images/connect.png" class="center" width="350" height="60" alt="Spotify_logo"/></button> 
     </form>
-    <div class="container">
-      <button id="getArtists">show artists</button>
-      <div id="showArtistEvent"></div>
-    </div>
+    <br>
     <h3>
         and we will do the rest...
     </h3>
   </article>
 <br>
-  <div class="container">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm">
-          <h4>Here are your top artists on Spotify:</h4>
-            <ol id="top-artists"></ol>
-        </div>
-        <div class="col-sm">
-          <h4>Here are your top tracks on Spotify:</h4>
-            <ol id="top-tracks"></ol>
-          
+<br>
+  <div class="spotify_results">
+    <div class="row">
+      <div class="col-sm">
+        <h4>Here are your top artists on Spotify:</h4>
+          <ol id="top-artists"></ol>
+      </div>
+      <div class="col-sm">
+        <h4>Here are your top tracks on Spotify:</h4>
+          <ol id="top-tracks"></ol>
       </div>
     </div>
   </div> 
 
-  <div class="container">
+  <div class="container text-center" id="ticketek_results">
+    <button id="getArtists" type="button" class="btn btn-success">Show Artists</button>
+    <div id="showArtistEvent"></div>
+  </div>
+
+  <div class="container" id="search_bar">
     <div class="row">
       <div class="input-group mb-3 col-md-12">
         <input type="text" id="artistSearchInput" class="form-control" placeholder="For more events, search here" aria-label="search here" aria-describedby="button-addon2" />
         <div class="input-group-append">
-          <input id="findEvent" type="submit" value="Find Event" />
+          <input id="findEvent" type="submit" value="Find Event"/>
         </div>
       </div>
     </div>
