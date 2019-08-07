@@ -50,7 +50,7 @@
   height: 100%;
 }
 
-.MainContent {
+.spotify_banner {
   position: relative;
   z-index: 2;
   max-width: 1080px;
@@ -87,14 +87,36 @@ p {
   margin-right: auto;
 }
 
-#spotify {
-  background-color: rgba(0, 0, 0, 0);
+
+#spotify,
+#getArtists {
+  background-color: rgba(0,0,0,0);
   border: none;
   outline: none !important;
   box-shadow: none;
   text-decoration: none;
 }
+
 #event-image {
   width: 500px;
   height: auto;
+}
+
+
+.spotify_results {
+  background-color: #151515;
+  color: white;
+  padding: 20px;
+}
+
+#search_bar {
+  padding: 20px;
+}
+
+#ticketmaster_results img {
+  max-height: 300px;
+  height: 70%;
+  width: auto;
+  float: left;
+  padding: 20px;
 }

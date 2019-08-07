@@ -22,7 +22,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css?family=Hind+Guntur&display=swap" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="assets/fonts/proxima-nova-web-fonts/fonts/fonts.css" />
 </head>
 
 <body>
@@ -45,14 +44,13 @@
     </video>
   </header>
 
-  <article class="MainContent">
+  <article class="spotify_banner">
     <h3>
       Never miss an event again
     </h3>
     <br>
     <form class="text-center">
-      <button type="submit" id="spotify" class="mb-2"><img src="assets/images/connect.png" class="center" width="280"
-          height="50" alt="Spotify_logo" /></button>
+      <button type="submit" id="spotify" class="mb-2"><img src="assets/images/connect.png" class="center" width="350" height="60" alt="Spotify_logo"/></button> 
     </form>
     <h3>
       and we will do the rest...
@@ -63,31 +61,35 @@
     </div>
   </article>
 
-  <br>
-
-  <div class="container">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm">
-          <h4>Here are your top artists on Spotify:</h4>
+<br>
+<br>
+  <div class="spotify_results">
+    <div class="row">
+      <div class="col-sm">
+        <h4>Here are your top artists on Spotify:</h4>
           <ol id="top-artists"></ol>
-        </div>
-        <div class="col-sm">
-          <h4>Here are your top tracks on Spotify:</h4>
+      </div>
+      <div class="col-sm">
+        <h4>Here are your top tracks on Spotify:</h4>
           <ol id="top-tracks"></ol>
 
-        </div>
       </div>
     </div>
 
-    <div class="container">
-      <div class="row">
-        <div class="input-group mb-3 col-md-12">
-          <input type="text" id="artistSearchInput" class="form-control" placeholder="For more events, search here"
-            aria-label="search here" aria-describedby="button-addon2" />
-          <div class="input-group-append">
-            <input id="findEvent" type="submit" value="Find Event" />
-          </div>
+
+  <div class="container text-center" id="ticketmaster_button">
+    <button type="button" id="getArtists" class="btn btn-primary mb-2"><img src="assets/images/ticketmaster_logo.png" class="center" width="350" height="130" alt="Ticketek_logo"/></button> 
+  </div>
+  <div id="ticketmaster_results" class="row">
+    <div id="showArtistEvent" class="col-xl-2 col-lg-3 col-md-4 col-sm-12"></div>
+  </div>
+
+  <div class="container" id="search_bar">
+    <div class="row">
+      <div class="input-group mb-3 col-md-12">
+        <input type="text" id="artistSearchInput" class="form-control" placeholder="For more events, search here" aria-label="search here" aria-describedby="button-addon2" />
+        <div class="input-group-append">
+          <input id="findEvent" type="submit" value="Find Event"/>
         </div>
       </div>
       <div class="row">
