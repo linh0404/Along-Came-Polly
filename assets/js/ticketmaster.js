@@ -5,8 +5,6 @@ var ticket = [];
 $("#getArtists").on("click", function(e) {
   console.log(topArtists);
   for (var j = 0; j < topArtists.length; j++) {
-    // console.log(topArtists[j]["name"]);
-    // $("#showArtistEvent").append(showArtistEvent);
     var showArtistEvent = topArtists[j]["name"];
     console.log(showArtistEvent);
     eventFromTicketMaster(showArtistEvent, false);
@@ -14,8 +12,6 @@ $("#getArtists").on("click", function(e) {
 });
 
 function eventFromTicketMaster(artist, searchEvent) {
-  // var artist = $(this).attr("data-event");
-
   //queryURL is the url we'll use to query the API
   var queryURL =
     "https://app.ticketmaster.com/discovery/v2/events.json?apikey=COsXEH07ztMABw0SgNFNxALf8IefVSt3&countryCode=au&keyword=" +
@@ -24,11 +20,11 @@ function eventFromTicketMaster(artist, searchEvent) {
     url: queryURL,
     method: "GET"
   }).then(function(response) {
-    // console.log(url);
-    //console.log(26, response);
-    // to access an array of object using square brackets
     var result = response["_embedded"]["events"];
-    showArtistEvent = response["_embedded"]["events"];
+    console.log(result);
+    showArtistEvent = response["_embedded"]["events"]["name"];
+    // console.log("showArtist", showArtistEvent);
+    // console.log("showartistevent", response["_embedded"]["events"][0], url);
 
     if (searchEvent) {
       // looping through the result
@@ -40,38 +36,41 @@ function eventFromTicketMaster(artist, searchEvent) {
           "src",
           result[i]["images"][0]["url"]
         );
+
+        var eventUrl = $("<h4>").text(result[0].url);
       }
       // store all the artist info result in div with an id name displaySearchResult
-      $("#displaySearchResult").append(name, image);
-      console.log(444);
+      $("#displaySearchResult").append(name, image, eventUrl);
     } else {
-      console.log("should run every time....");
       if (result && result.length) {
-        console.log(result[0]);
-        console.log(result[0].images[0].url);
-        console.log(result[0].url);
+        // console.log("result", result[0]);
+        // console.log(result[0].images[0].url);
+        // console.log(result[0].url);
+
+        // store the event/artist name from api call in a variable
+        var nameOfEventOrArtist = result[0].name;
+
+        // display event/artist name in a h4 tag
+        var displayEvent0rAristName = $("<h3>");
+        displayEvent0rAristName.text(nameOfEventOrArtist);
+
+        // store the image from api reponse in a variable imageURL
         var imageURL = result[0].images[0].url;
-        var url = result[0].url;
-        var tile = $("<h4>");
-        tile.text(url);
-        var image = $("<img>");
+
+        // store the event image in a variable and reference to HTML img tag
+        var image = $("<img id='event-image'>");
         image.attr("src", imageURL);
-        $("#showArtistEvent").append(tile);
+
+        // store the event URL response from api in a variable named url
+        var url = result[0].url;
+        var clickableEventURL = $("<h4>");
+        clickableEventURL.text(url);
+        console.log("event-url", url);
+
+        // append the eventURL, image and name of event/arist to a div with an id showArtistEvent
+        $("#showArtistEvent").append(displayEvent0rAristName);
         $("#showArtistEvent").append(image);
-
-        // for (var k = 0; k < result.length; k++) {
-        //   console.log(52, ...result);
-        //   ticket.push(...result);
-        //   console.log("ticketsss", ticket);
-
-        //   var populateEvents = reponse["images"][0];
-        //   p = $("<h4>");
-        //   p.text("hello world");
-        //   image = $("<img>");
-        //   image.attr("src", ["images"][url]);
-
-        //   $("#showArtistEvent").append(image);
-        // }
+        $("#showArtistEvent").append(clickableEventURL);
       }
     }
   });
