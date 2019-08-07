@@ -55,7 +55,7 @@
   z-index: 2;
   max-width: 1080px;
   padding-top: 230px;
-  margin: 50 auto 20 auto;
+  margin: 50vh auto 20px auto;
 }
 
 .artist-image {
@@ -96,6 +96,7 @@ p {
 }
 
 .spotify_results {
-  background-color: grey;
-  color: black;
+  background-color: #151515;
+  color: white;
+  padding: 20px;
 }
