@@ -101,3 +101,15 @@ p {
   color: white;
   padding: 20px;
 }
+
+#search_bar {
+  padding: 20px;
+}
+
+#ticketmaster_results img {
+  max-height: 300px;
+  height: 70%;
+  width: auto;
+  float: left;
+  padding: 20px;
+}
