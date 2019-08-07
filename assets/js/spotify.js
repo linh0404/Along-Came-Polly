@@ -1,8 +1,6 @@
 var topArtists = [];
 
-$("#spotify").on("click", function(e) {
-  e.preventDefault();
-
+function getArtists() {
   const hash = window.location.hash
     .substring(1)
     .split("&")
@@ -18,6 +16,51 @@ $("#spotify").on("click", function(e) {
   // Set token
   let _token = hash.access_token;
 
+  // If there is no token, redirect to Spotify authorization
+  if (_token) {
+    $.ajax({
+      url: "https://api.spotify.com/v1/me/top/artists",
+      type: "GET",
+      beforeSend: function(xhr) {
+        xhr.setRequestHeader("Authorization", "Bearer " + _token);
+        console.log("request sent to the server");
+      },
+      success: function(data) {
+        // Do something with the returned data
+        topArtists = data.items;
+
+        data.items.map(function(artist) {
+          let item = $("<li>" + artist.name + "</li>");
+          item.appendTo($("#top-artists"));
+        });
+      }
+    });
+    // Make a call using the token
+
+    $.ajax({
+      url: "https://api.spotify.com/v1/me/top/tracks",
+      type: "GET",
+      beforeSend: function(xhr) {
+        xhr.setRequestHeader("Authorization", "Bearer " + _token);
+      },
+      success: function(data) {
+        // Do something with the returned data
+        data.items.map(function(artist) {
+          let item = $("<li>" + artist.name + "</li>");
+          item.appendTo($("#top-tracks"));
+        });
+      }
+    });
+  }
+}
+// document onload or ready
+$(document).ready(function(e) {
+  getArtists();
+});
+
+$("#spotify").on("click", function(e) {
+  e.preventDefault();
+
   const authEndpoint = "https://accounts.spotify.com/authorize";
 
   // Replace with your app's client ID, redirect URI and desired scopes
@@ -25,42 +68,7 @@ $("#spotify").on("click", function(e) {
   const redirectUri = "http://localhost:8080";
   const scopes = ["user-top-read", "user-read-recently-played"];
 
-  // If there is no token, redirect to Spotify authorization
-  if (!_token) {
-    window.location = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join(
-      "%20"
-    )}&response_type=token&show_dialog=true`;
-  }
-  // Make a call using the token
-  $.ajax({
-    url: "https://api.spotify.com/v1/me/top/artists",
-    type: "GET",
-    beforeSend: function(xhr) {
-      xhr.setRequestHeader("Authorization", "Bearer " + _token);
-    },
-    success: function(data) {
-      // Do something with the returned data
-      topArtists = data.items;
-
-      data.items.map(function(artist) {
-        let item = $("<li>" + artist.name + "</li>");
-        item.appendTo($("#top-artists"));
-      });
-    }
-  });
-
-  $.ajax({
-    url: "https://api.spotify.com/v1/me/top/tracks",
-    type: "GET",
-    beforeSend: function(xhr) {
-      xhr.setRequestHeader("Authorization", "Bearer " + _token);
-    },
-    success: function(data) {
-      // Do something with the returned data
-      data.items.map(function(artist) {
-        let item = $("<li>" + artist.name + "</li>");
-        item.appendTo($("#top-tracks"));
-      });
-    }
-  });
+  window.location = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join(
+    "%20"
+  )}&response_type=token&show_dialog=true`;
 });

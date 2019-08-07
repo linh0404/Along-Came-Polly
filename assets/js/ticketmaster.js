@@ -1,5 +1,7 @@
 // function to call and display events from Ticketmaster
 
+var ticket = [];
+
 $("#getArtists").on("click", function(e) {
   console.log(topArtists);
   for (var j = 0; j < topArtists.length; j++) {
@@ -23,7 +25,7 @@ function eventFromTicketMaster(artist, searchEvent) {
     method: "GET"
   }).then(function(response) {
     // console.log(url);
-    console.log(26, response);
+    //console.log(26, response);
     // to access an array of object using square brackets
     var result = response["_embedded"]["events"];
     showArtistEvent = response["_embedded"]["events"];
@@ -43,11 +45,33 @@ function eventFromTicketMaster(artist, searchEvent) {
       $("#displaySearchResult").append(name, image);
       console.log(444);
     } else {
-      for (var k = 0; k < result.length; k++) {
-        var populateEvents = reponse["_embedded"]["events"]["name"];
-        populateEvents = $("<h4 id='artist-events-tm>");
-        console.log(48, populateEvents);
-        $("#showArtistEvent").append(populateEvents);
+      console.log("should run every time....");
+      if (result && result.length) {
+        console.log(result[0]);
+        console.log(result[0].images[0].url);
+        console.log(result[0].url);
+        var imageURL = result[0].images[0].url;
+        var url = result[0].url;
+        var tile = $("<h4>");
+        tile.text(url);
+        var image = $("<img>");
+        image.attr("src", imageURL);
+        $("#showArtistEvent").append(tile);
+        $("#showArtistEvent").append(image);
+
+        // for (var k = 0; k < result.length; k++) {
+        //   console.log(52, ...result);
+        //   ticket.push(...result);
+        //   console.log("ticketsss", ticket);
+
+        //   var populateEvents = reponse["images"][0];
+        //   p = $("<h4>");
+        //   p.text("hello world");
+        //   image = $("<img>");
+        //   image.attr("src", ["images"][url]);
+
+        //   $("#showArtistEvent").append(image);
+        // }
       }
     }
   });
