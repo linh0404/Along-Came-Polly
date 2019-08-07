@@ -50,7 +50,7 @@
   height: 100%;
 }
 
-.MainContent {
+.spotify_banner {
   position: relative;
   z-index: 2;
   max-width: 1080px;
@@ -93,4 +93,10 @@ p {
   outline: none !important;
   box-shadow: none;
   text-decoration: none;
+}
+
+.spotify_results {
+  background-color: #151515;
+  color: white;
+  padding: 20px;
 }
