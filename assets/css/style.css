@@ -32,7 +32,7 @@
 }
 
 .BackgroundVideo svg mask rect {
-  fill: rgba(255, 255, 255, 0.9);
+  fill: rgba(255, 255, 255, 0.7);
 }
 
 .BackgroundVideo svg > rect {
@@ -54,7 +54,7 @@
   position: relative;
   z-index: 2;
   max-width: 1080px;
-  padding: 20px;
+  padding-top: 230px;
   margin: 50vh auto 20px auto;
 }
 
@@ -64,7 +64,7 @@
 }
 
 body {
-  background-color: black;
+  background-color: #151515;
 }
 
 h3,
@@ -90,4 +90,7 @@ p {
 #spotify {
   background-color: rgba(0,0,0,0);
   border: none;
+  outline: none !important;
+  box-shadow: none;
+  text-decoration: none;
 }
