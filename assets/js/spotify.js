@@ -28,9 +28,9 @@ function getArtists() {
       success: function(data) {
         // Do something with the returned data
         topArtists = data.items;
-
+        let artistsHead = $("<h4>Here are your top artists on Spotify:</h4><br>");
+        artistsHead.appendTo($("#top-artists"));
         data.items.map(function(artist) {
-          let topArtists = "<h4>Here are your top artists on Spotify:</h4><br>";
           let item = $("<li>" + artist.name + "</li>");
           item.appendTo($("#top-artists"));
         });
@@ -46,8 +46,9 @@ function getArtists() {
       },
       success: function(data) {
         // Do something with the returned data
+        let tracksHead = $("<h4>Here are your top tracks on Spotify</h4><br>");
+        tracksHead.appendTo($("#top-tracks"));
         data.items.map(function(artist) {
-          let topTracks = "<h4>Here are your top tracks on Spotify</h4><br>";
           let item = $("<li>" + artist.name + "</li>");
           item.appendTo($("#top-tracks"));
         });

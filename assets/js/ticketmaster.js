@@ -64,12 +64,9 @@ function eventFromTicketMaster(artist, searchEvent) {
         link.attr("href",url);
         var image = $("<img>");
         image.attr("src", imageURL);
+        link.append(image);
         $("#showArtistEvent").append(tile);
-        $("#showArtistEvent").append(image);
         $("#showArtistEvent").append(link.attr("href",url).image);
-
-        // <a href=“link”><img src=“image link”></img></a>
-
 
         // store the event image in a variable and reference to HTML img tag
         var image = $("<img id='event-image'>");
