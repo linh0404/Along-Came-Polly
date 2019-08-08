@@ -13,13 +13,11 @@ $("#getArtists").on("click", function(e) {
 function eventFromTicketMaster(artist, searchEvent) {
   //queryURL is the url we'll use to query the API
   var queryURL =
-    "https://app.ticketmaster.com/discovery/v2/events.json?apikey=COsXEH07ztMABw0SgNFNxALf8IefVSt3&dmaId=705&keyword=" +
+    "https://app.ticketmaster.com/discovery/v2/events.json?apikey=COsXEH07ztMABw0SgNFNxALf8IefVSt3&countryCode=au&keyword=" +
     artist;
   $.ajax({
     url: queryURL,
-    method: "GET",
-    async: true,
-    crossDomain: true
+    method: "GET"
   }).then(function(response) {
     var result = response["_embedded"]["events"];
     console.log(result);

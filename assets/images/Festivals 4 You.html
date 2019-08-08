@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<!-- saved from url=(0023)http://localhost:8080/# -->
+<html><head lang="en"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>Festivals 4 You</title>
+  <!-- reset.css -->
+  
+  <!-- jquery -->
+  <script src="./Festivals 4 You_files/jquery.min.js"></script>
+  <!-- jquery-modal -->
+  <script src="./Festivals 4 You_files/jquery.modal.js" integrity="sha256-Xn32xgoXnSJx7yF1Tc0WFkI8WbupFklylorHLBeu0CA=" crossorigin="anonymous"></script>
+  <!-- bootstrap -->
+  
+  <!-- Firebase References -->
+  <script src="./Festivals 4 You_files/firebase-app.js"></script>
+  <script src="./Festivals 4 You_files/firebase-database.js"></script>
+  <!-- style.css -->
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Font -->
+  
+<link rel="stylesheet" type="text/css" href="./Festivals 4 You_files/reset.css"><link rel="stylesheet" href="./Festivals 4 You_files/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"><link rel="stylesheet" type="text/css" href="./Festivals 4 You_files/style.css"><link rel="stylesheet" href="./Festivals 4 You_files/animations.css" type="text/css"><link href="./Festivals 4 You_files/css" rel="stylesheet"></head>
+
+<body>
+  <!-- Link to Moment.js should go here -->
+  <script src="./Festivals 4 You_files/moment.min.js"></script>
+  <!-- Banner Video -->
+  <header class="BackgroundVideo">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920px" height="1080px" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <mask id="mask" x="0" y="0" width="1920" height="1080">
+          <rect x="0" y="0" width="1920" height="1080"></rect>
+          <text x="840" y="1em">Festivals</text>
+          <text x="1600" y="85%">4U</text>
+        </mask>
+      </defs>
+      <rect x="0" y="0" width="1920" height="1080"></rect>
+    </svg>
+    <video autoplay="" loop="" muted="">
+      <source src="assets/images/banner_video_light.mov">
+    </video>
+  </header>
+
+  <!-- Spotify Button -->
+  <article class="spotify_banner">
+    <h3>
+      Never miss an event again
+    </h3>
+    <br>
+    <form class="text-center">
+      <button type="submit" id="spotify" class="mb-2"><img src="./Festivals 4 You_files/connect.png" class="center" width="350" height="60" alt="Spotify_logo"></button> 
+    </form>
+    <br>
+    <h3>
+      and we will do the rest...
+    </h3>
+  </article>
+<br>
+<br>
+  <!-- Spotify Results -->
+  <div class="spotify_results animatedParent">
+    <div class="row animated bounceInUp go">
+      <div class="col-sm">
+        <ol id="top-artists"><li>Above &amp; Beyond</li><li>MaRLo</li><li>Gareth Emery</li><li>The Thrillseekers</li><li>Neelix</li><li>Aly &amp; Fila</li><li>Charlie Puth</li><li>Key4050</li><li>Calvin Harris</li><li>Phaxe</li><li>The Strokes</li><li>Billie Eilish</li><li>Cosmic Gate</li><li>Ed Sheeran</li><li>Wasted Penguinz</li><li>deadmau5</li><li>John O'Callaghan</li><li>Oceanlab</li><li>Astrix</li><li>Shpongle</li></ol>
+      </div>
+      <div class="col-sm">
+        <ol id="top-tracks"><li>Wild and Perfect Day - Cosmic Gate Remix</li><li>New York City (Super8 &amp; Tab Remix)</li><li>Fall Into You - Extended Mix</li><li>Crossroads</li><li>Surrender</li><li>Born &amp; Raised feat Jenita Spirtovic - Ranji Remix</li><li>Evergreen</li><li>bad guy (with Justin Bieber)</li><li>How Can I - John O'Callaghan Remix</li><li>7 Seas</li><li>Everything</li><li>Same Stars - Standerwick Remix</li><li>Ecstasy - Morten Granau Remix</li><li>Bungee Jump</li><li>Psylence</li><li>Missing - Extended Mix</li><li>Heart Of Stone - Solarstone 'Can't Forget You' Pure Dub</li><li>You - Extended Mix</li><li>Sirens Of The Sea - Above &amp; Beyond Club Mix</li><li>Where Do We Begin - Andrew Rayel Remix</li></ol>
+      </div>
+    </div>
+
+  <!-- Ticketmaster Button -->
+  <div class="container text-center" id="ticketmaster_button">
+    <button type="button" id="getArtists" class="btn btn-primary mb-2"><img src="./Festivals 4 You_files/ticketmaster_logo.png" class="center" width="350" height="130" alt="Ticketek_logo"></button> 
+  </div>
+
+  <!-- Ticketmaster Results -->
+  <div class="animatedParent">
+    <div id="ticketmaster_results" class="row bounceInUp">
+      <div id="showArtistEvent" class="col-xl-2 col-lg-3 col-md-4 col-sm-12"><h4>http://resale.ticketmaster.com.au/Resale/Tickets/2690927</h4><img src="./Festivals 4 You_files/c5c08e7a-9912-456c-a060-2758be94e060_105881_EVENT_DETAIL_PAGE_16_9.jpg"><h3>Marlo presents Altitude</h3><img id="event-image" src="./Festivals 4 You_files/c5c08e7a-9912-456c-a060-2758be94e060_105881_EVENT_DETAIL_PAGE_16_9.jpg"><h4>http://resale.ticketmaster.com.au/Resale/Tickets/2690927</h4><h4>https://www.ticketmaster.com.au/festival-x-bowen-hills-queensland-11-29-2019/event/130056E6C383901E</h4><img src="./Festivals 4 You_files/c9b3b667-99a7-44d0-8a06-e4177b1c97dd_1114421_TABLET_LANDSCAPE_LARGE_16_9.jpg"><h3>Festival X</h3><img id="event-image" src="./Festivals 4 You_files/c9b3b667-99a7-44d0-8a06-e4177b1c97dd_1114421_TABLET_LANDSCAPE_LARGE_16_9.jpg"><h4>https://www.ticketmaster.com.au/festival-x-bowen-hills-queensland-11-29-2019/event/130056E6C383901E</h4></div>
+    </div>
+</div>
+  <!-- Search Bar -->
+  <div class="container" id="search_bar">
+    <div class="row">
+      <div class="input-group mb-3 col-md-12">
+        <input type="text" id="artistSearchInput" class="form-control" placeholder="For more events, search here" aria-label="search here" aria-describedby="button-addon2">
+        <div class="input-group-append">
+          <input id="findEvent" type="submit" value="Find Event">
+        </div>
+      </div>
+      <div class="row">
+        <div id="displaySearchResult"></div>
+      </div>
+    </div>
+
+  <div class="container">
+    <button id="getArtists">Show Upcoming Events</button>
+    <div id="showArtistEvent" style="color: white;"></div>
+  </div>
+    <!-- Javascript files -->
+    <script src="./Festivals 4 You_files/spotify.js"></script>
+    <script src="./Festivals 4 You_files/ticketmaster.js"></script>
+    <script src="./Festivals 4 You_files/animate.js"></script>
+<!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</div></div></body></html>
