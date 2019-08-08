@@ -19,6 +19,7 @@
   <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
   <!-- style.css -->
   <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/animations.css" type="text/css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css?family=Hind+Guntur&display=swap" rel="stylesheet">
@@ -54,28 +55,21 @@
     <form class="text-center">
       <button type="submit" id="spotify" class="mb-2"><img src="assets/images/connect.png" class="center" width="350" height="60" alt="Spotify_logo"/></button> 
     </form>
+    <br>
     <h3>
       and we will do the rest...
     </h3>
-    <div class="container">
-      <button id="getArtists">Show Upcoming Events</button>
-      <div id="showArtistEvent" style="color: white;"></div>
-    </div>
   </article>
-
 <br>
 <br>
   <!-- Spotify Results -->
-  <div class="spotify_results">
-    <div class="row">
+  <div class="spotify_results animatedParent">
+    <div class="row animated bounceInUp">
       <div class="col-sm">
-        <h4>Here are your top artists on Spotify:</h4>
-          <ol id="top-artists"></ol>
+        <ol id="top-artists"></ol>
       </div>
       <div class="col-sm">
-        <h4>Here are your top tracks on Spotify:</h4>
-          <ol id="top-tracks"></ol>
-
+        <ol id="top-tracks"></ol>
       </div>
     </div>
 
@@ -83,10 +77,13 @@
   <div class="container text-center" id="ticketmaster_button">
     <button type="button" id="getArtists" class="btn btn-primary mb-2"><img src="assets/images/ticketmaster_logo.png" class="center" width="350" height="130" alt="Ticketek_logo"/></button> 
   </div>
+
   <!-- Ticketmaster Results -->
-  <div id="ticketmaster_results" class="row">
-    <div id="showArtistEvent" class="col-xl-2 col-lg-3 col-md-4 col-sm-12"></div>
-  </div>
+  <div class="animatedParent">
+    <div id="ticketmaster_results" class="row bounceInUp">
+      <div id="showArtistEvent" class="col-xl-2 col-lg-3 col-md-4 col-sm-12"></div>
+    </div>
+</div>
   <!-- Search Bar -->
   <div class="container" id="search_bar">
     <div class="row">
@@ -99,12 +96,16 @@
       <div class="row">
         <div id="displaySearchResult"></div>
       </div>
-
     </div>
+
+  <div class="container">
+    <button id="getArtists">Show Upcoming Events</button>
+    <div id="showArtistEvent" style="color: white;"></div>
+  </div>
     <!-- Javascript files -->
     <script src="./assets/js/spotify.js"></script>
     <script src="./assets/js/ticketmaster.js"></script>
-    <script src="./assets/js/app.js"></script>
+    <script src="./assets/js/animate.js"></script>
 </body>
 
 </html>
