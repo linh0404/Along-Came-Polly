@@ -27,6 +27,7 @@
 <body>
   <!-- Link to Moment.js should go here -->
   <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+  <!-- Banner Video -->
   <header class="BackgroundVideo">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920px" height="1080px"
       preserveAspectRatio="xMidYMid slice">
@@ -44,6 +45,7 @@
     </video>
   </header>
 
+  <!-- Spotify Button -->
   <article class="spotify_banner">
     <h3>
       Never miss an event again
@@ -60,6 +62,7 @@
 
 <br>
 <br>
+  <!-- Spotify Results -->
   <div class="spotify_results">
     <div class="row">
       <div class="col-sm">
@@ -73,14 +76,15 @@
       </div>
     </div>
 
-
+  <!-- Ticketmaster Button -->
   <div class="container text-center" id="ticketmaster_button">
     <button type="button" id="getArtists" class="btn btn-primary mb-2"><img src="assets/images/ticketmaster_logo.png" class="center" width="350" height="130" alt="Ticketek_logo"/></button> 
   </div>
+  <!-- Ticketmaster Results -->
   <div id="ticketmaster_results" class="row">
     <div id="showArtistEvent" class="col-xl-2 col-lg-3 col-md-4 col-sm-12"></div>
   </div>
-
+  <!-- Search Bar -->
   <div class="container" id="search_bar">
     <div class="row">
       <div class="input-group mb-3 col-md-12">
@@ -94,8 +98,10 @@
       </div>
 
     </div>
+    <!-- Javascript files -->
     <script src="./assets/js/spotify.js"></script>
     <script src="./assets/js/ticketmaster.js"></script>
+    <script src="./assets/js/app.js"></script>
 </body>
 
 </html>

@@ -1,5 +1,4 @@
 // function to call and display events from Ticketmaster
-
 var ticket = [];
 
 $("#getArtists").on("click", function(e) {
@@ -54,10 +53,17 @@ function eventFromTicketMaster(artist, searchEvent) {
         var url = result[0].url;
         var tile = $("<h4>");
         tile.text(url);
+        // create a image link rather than seperate link and image
+        var link = $("<a>");
+        link.attr("href",url);
         var image = $("<img>");
         image.attr("src", imageURL);
         $("#showArtistEvent").append(tile);
         $("#showArtistEvent").append(image);
+        $("#showArtistEvent").append(link.attr("href",url).image);
+
+        // <a href=“link”><img src=“image link”></img></a>
+
 
         // for (var k = 0; k < result.length; k++) {
         //   console.log(52, ...result);
