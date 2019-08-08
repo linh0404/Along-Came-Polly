@@ -31,8 +31,6 @@ function eventFromTicketMaster(artist, searchEvent) {
       for (var i = 0; i < 5; i++) {
         // display artist name and concert of the artist by calling the api
 
-        var divStoreSearchResult = $("<div>");
-
         var name = $("<h3 id='artist-name'>").text(result[i]["name"]);
 
         var image = $("<image class='artist-image'>").attr(
