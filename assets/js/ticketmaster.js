@@ -46,7 +46,7 @@ function eventFromTicketMaster(artist, searchEvent) {
         eventUrl.append(image);
         divStoreSearchResult.append(eventUrl);
 
-        $("#displaySearchResult").append(divStoreSearchResult);
+        $("#showArtistEvent").append(divStoreSearchResult);
       }
       // store all the artist info result in div with an id name displaySearchResult
     } else {
