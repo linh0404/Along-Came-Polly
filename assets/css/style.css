@@ -43,7 +43,7 @@
 }
 
 .BackgroundVideo svg text {
-  font-family: 'Hind Guntur', sans-serif;
+  font-family: "Hind Guntur", sans-serif;
   font-weight: 800;
   font-size: 35em;
   letter-spacing: -0.09em;
@@ -71,13 +71,13 @@ h3,
 h4,
 p,
 ol {
-  font-family: 'Hind Guntur', sans-serif;
+  font-family: "Hind Guntur", sans-serif;
   color: white;
   text-align: center;
 }
 
 p {
-  font-family: 'Hind Guntur', sans-serif;
+  font-family: "Hind Guntur", sans-serif;
   font-weight: bold;
 }
 
@@ -87,6 +87,7 @@ p {
   margin-right: auto;
 }
 
+
 #spotify,
 #getArtists {
   background-color: rgba(0,0,0,0);
@@ -95,6 +96,12 @@ p {
   box-shadow: none;
   text-decoration: none;
 }
+
+#event-image {
+  width: 500px;
+  height: auto;
+}
+
 
 .spotify_results {
   background-color: #151515;
