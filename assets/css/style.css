@@ -121,3 +121,9 @@ p {
   padding: 20px;
 }
 
+.container ticketmaster_button {
+  background-color: #02ade5;
+  padding: 0;
+  margin: 0;
+}
+
