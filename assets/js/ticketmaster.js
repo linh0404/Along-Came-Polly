@@ -30,18 +30,19 @@ function eventFromTicketMaster(artist, searchEvent) {
       // looping through the result
       for (var i = 0; i < 5; i++) {
         // display artist name and concert of the artist by calling the api
-
         var name = $("<h3 id='artist-name'>").text(result[i]["name"]);
-
-        var image = $("<image class='artist-image'>").attr(
-          "src",
-          result[i]["images"][0]["url"]
-        );
-
-        var eventUrl = $("<h4>").text(result[0].url);
+        var imageURL = result[0].images[0].url;
+        var url = result[0].url;
+        // store all the artist info result in div with an id name displaySearchResult
+        var link = $("<a>");
+        link.attr("href",url);
+        var image = $("<img>");
+        image.attr("src", imageURL);
+        link.append(image);
+        $("#displaySearchResult").append(link);
       }
-      // store all the artist info result in div with an id name displaySearchResult
-      $("#displaySearchResult").append(name, image, eventUrl);
+      console.log(result);
+    
     } else {
       if (result && result.length) {
         var newdiv = $("<div>");
@@ -64,6 +65,7 @@ function eventFromTicketMaster(artist, searchEvent) {
         var displayurl = $("<a>");
         displayurl.attr("href", result[0].url);
         console.log("url", displayurl);
+
 
         displayurl.append(displayimage);
         newdiv.append(displayname);
