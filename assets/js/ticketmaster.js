@@ -3,7 +3,7 @@ var ticket = [];
 
 $("#getArtists").on("click", function(e) {
   console.log(topArtists);
-  for (var j = 0; j < 3; j++) {
+  for (var j = 0; j < 5; j++) {
     var showArtistEvent = topArtists[j]["name"];
     console.log("artist", showArtistEvent);
     eventFromTicketMaster(showArtistEvent, false);
@@ -13,7 +13,7 @@ $("#getArtists").on("click", function(e) {
 function eventFromTicketMaster(artist, searchEvent) {
   //queryURL is the url we'll use to query the API
   var queryURL =
-    "https://app.ticketmaster.com/discovery/v2/events.json?apikey=COsXEH07ztMABw0SgNFNxALf8IefVSt3&dmaId=705&limit=4&keyword=" +
+    "https://app.ticketmaster.com/discovery/v2/events.json?apikey=COsXEH07ztMABw0SgNFNxALf8IefVSt3&countryCode=AU&limit=4&keyword=" +
     artist;
   $.ajax({
     url: queryURL,
@@ -28,48 +28,57 @@ function eventFromTicketMaster(artist, searchEvent) {
 
     if (searchEvent) {
       // looping through the result
-      for (var i = 0; i < 5; i++) {
+      for (var i = 0; i < 5 || i < result.lengt; i++) {
+        var divStoreSearchResult = $("<div>");
+
         // display artist name and concert of the artist by calling the api
+        var name = $("<h3 id='artist-name'>");
+        name.text(result[i]["name"]);
+        console.log("name", name);
 
-        var name = $("<h3 id='artist-name'>").text(result[i]["name"]);
+        var image = $("<image class='artist-image'>");
+        image.attr("src", result[i]["images"][0]["url"]);
 
-        var image = $("<image class='artist-image'>").attr(
-          "src",
-          result[i]["images"][0]["url"]
-        );
+        var eventUrl = $("<a>");
+        eventUrl.attr("href", result[i].url);
 
-        var eventUrl = $("<h4>").text(result[0].url);
+        divStoreSearchResult.append(name);
+        eventUrl.append(image);
+        divStoreSearchResult.append(eventUrl);
+
+        $("#displaySearchResult").append(divStoreSearchResult);
       }
       // store all the artist info result in div with an id name displaySearchResult
-      $("#displaySearchResult").append(name, image, eventUrl);
     } else {
       if (result && result.length) {
-        var newdiv = $("<div>");
-        newdiv.attr("class", "col-xl-2 col-lg-3 col-md-4 col-sm-12");
         // console.log("result", result[0]);
         // console.log("image", result[0].images[0].url);
         // console.log("url", result[0].url);
+        for (var k = 0; k < 5 || k < result.length; k++) {
+          var newdiv = $("<div>");
+          newdiv.attr("class", "col-xl-2 col-lg-3 col-md-4 col-sm-12");
+          // store the event/artist name from api call in a variable
+          console.log("newdiv", newdiv);
 
-        // store the event/artist name from api call in a variable
-        console.log("newdiv", newdiv);
-        var displayname = $("<h3>");
-        displayname.text(result[0].name);
-        console.log("name", displayname);
+          var displayname = $("<h3>");
+          displayname.text(result[k].name);
+          console.log("name", displayname);
 
-        // // store the image from api reponse in a variable imageURL
-        var displayimage = $("<img id='event-image'>");
-        displayimage.attr("src", result[0].images[0].url);
-        console.log(displayimage);
+          // // store the image from api reponse in a variable imageURL
+          var displayimage = $("<img id='event-image'>");
+          displayimage.attr("src", result[k].images[0].url);
+          console.log(displayimage);
 
-        var displayurl = $("<a>");
-        displayurl.attr("href", result[0].url);
-        console.log("url", displayurl);
+          var displayurl = $("<a>");
+          displayurl.attr("href", result[k].url);
+          console.log("url", displayurl);
 
-        displayurl.append(displayimage);
-        newdiv.append(displayname);
-        newdiv.append(displayurl);
+          displayurl.append(displayimage);
+          newdiv.append(displayname);
+          newdiv.append(displayurl);
 
-        $("#showArtistEvent").append(newdiv);
+          $("#showArtistEvent").append(newdiv);
+        }
       }
     }
   });
