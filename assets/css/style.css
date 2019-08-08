@@ -70,7 +70,7 @@ body {
 h3,
 h4,
 p,
-ol {
+li {
   font-family: "Hind Guntur", sans-serif;
   color: white;
   text-align: center;
@@ -87,21 +87,24 @@ p {
   margin-right: auto;
 }
 
-
 #spotify,
 #getArtists {
-  background-color: rgba(0,0,0,0);
+  background-color: rgba(0, 0, 0, 0);
   border: none;
   outline: none !important;
   box-shadow: none;
   text-decoration: none;
 }
 
+.animated {
+  padding: 20px 0px;
+  margin: 0px;
+}
+
 #event-image {
   width: 500px;
   height: auto;
 }
-
 
 .spotify_results {
   background-color: #151515;
@@ -113,11 +116,11 @@ p {
   padding: 20px;
 }
 
-#ticketmaster_results img {
+#ticketmaster_results img,
+#displaySearchResult img {
   max-height: 300px;
   height: 70%;
   width: auto;
-  float: left;
   padding: 20px;
 }
 
@@ -127,3 +130,21 @@ p {
   margin: 0;
 }
 
+footer {
+  padding: 20px 0;
+  margin: 0;
+  font-size: 12px;
+  color: #ffffff;
+  text-align: center;
+  background: black;
+  height: 90px;
+  display: block;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.fa-2x {
+  color: #bf1025;
+  size: 10px;
+}

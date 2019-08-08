@@ -28,7 +28,9 @@ function getArtists() {
       success: function(data) {
         // Do something with the returned data
         topArtists = data.items;
-        let artistsHead = $("<h4>Here are your top artists on Spotify:</h4><br>");
+        let artistsHead = $(
+          "<h4>Here are your top artists on Spotify:</h4><br>"
+        );
         artistsHead.appendTo($("#top-artists"));
         data.items.map(function(artist) {
           let item = $("<li>" + artist.name + "</li>");
