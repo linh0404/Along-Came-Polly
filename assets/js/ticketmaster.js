@@ -32,7 +32,9 @@ function eventFromTicketMaster(artist, searchEvent) {
         var divStoreSearchResult = $("<div>");
 
         // display artist name and concert of the artist by calling the api
+
         var name = $("<h3 class='fa fa-heart heart fa-2x'>");
+
         name.text(result[i]["name"]);
         console.log("name", name);
 
@@ -60,7 +62,9 @@ function eventFromTicketMaster(artist, searchEvent) {
           // store the event/artist name from api call in a variable
           console.log("newdiv", newdiv);
 
+
           var displayname = $("<h3 class='fa fa-heart heart fa-2x'>");
+
           displayname.text(result[k].name);
           console.log("name", displayname);
 
@@ -73,13 +77,13 @@ function eventFromTicketMaster(artist, searchEvent) {
           displayurl.attr("href", result[k].url);
           console.log("url", displayurl);
 
+
           // Create favourites
           var favourites = $(".fa fa-heart heart fa-2x");
           favourites.attr("aria-hidden", "true");
           favourites.attr("span-image");
 
           newdiv.append(favourites);
-          // End Favourites- Richard 09/08/2019
           displayurl.append(displayimage);
           newdiv.append(displayname);
           newdiv.append(displayurl);
