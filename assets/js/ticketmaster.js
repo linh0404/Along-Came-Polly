@@ -1,5 +1,4 @@
 // function to call and display events from Ticketmaster
-
 var ticket = [];
 
 $("#getArtists").on("click", function(e) {
@@ -56,6 +55,21 @@ function eventFromTicketMaster(artist, searchEvent) {
 
         // store the image from api reponse in a variable imageURL
         var imageURL = result[0].images[0].url;
+
+        var url = result[0].url;
+        var tile = $("<h4>");
+        tile.text(url);
+        // create a image link rather than seperate link and image
+        var link = $("<a>");
+        link.attr("href",url);
+        var image = $("<img>");
+        image.attr("src", imageURL);
+        $("#showArtistEvent").append(tile);
+        $("#showArtistEvent").append(image);
+        $("#showArtistEvent").append(link.attr("href",url).image);
+
+        // <a href=“link”><img src=“image link”></img></a>
+
 
         // store the event image in a variable and reference to HTML img tag
         var image = $("<img id='event-image'>");
