@@ -26,30 +26,34 @@ function eventFromTicketMaster(artist, searchEvent) {
     console.log("result", result);
     showArtistEvent = response["_embedded"]["events"]["name"];
 
+    cardColumn = $("<div class='card-columns col-lg-12'>");
+
     if (searchEvent) {
       // looping through the result
-      for (var i = 0; i < 5 || i < result.lengt; i++) {
-        var divStoreSearchResult = $("<div>");
+      for (var i = 0; i < 5 || i < result.length; i++) {
+        var card = $("<div class='card'>")
 
         // display artist name and concert of the artist by calling the api
 
-        var name = $("<h3 class='fa fa-heart heart fa-2x'>");
+        var name = $("<h3 class='card-title fa fa-heart heart fa-2x'>");
 
         name.text(result[i]["name"]);
         console.log("name", name);
 
-        var image = $("<image class='artist-image'>");
+        var image = $("<image class='artist-image card-img-top'>");
         image.attr("src", result[i]["images"][0]["url"]);
 
         var eventUrl = $("<a>");
         eventUrl.attr("href", result[i].url);
 
-        divStoreSearchResult.append(name);
+        card.append(name);
         eventUrl.append(image);
-        divStoreSearchResult.append(eventUrl);
-
-        $("#showArtistEvent").append(divStoreSearchResult);
+        card.append(eventUrl);
+        cardColumn.append(card);
       }
+
+      $("#showArtistEvent").append(cardColumn);
+
       // store all the artist info result in div with an id name displaySearchResult
     } else {
       if (result && result.length) {

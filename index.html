@@ -39,7 +39,7 @@
   <!-- Link to Moment.js should go here -->
   <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
   <!-- Banner Video -->
-  <header class="BackgroundVideo">
+  <div class="BackgroundVideo">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920px" height="1080px"
       preserveAspectRatio="xMidYMid slice">
       <defs>
@@ -54,7 +54,7 @@
     <video autoplay loop muted>
       <source src="assets/images/banner_video_light.mov" />
     </video>
-  </header>
+  </div>
 
   <!-- Spotify Button -->
   <article class="spotify_banner">
@@ -83,21 +83,29 @@
         <ol id="top-tracks"></ol>
       </div>
     </div>
+  </div>
 
+  <!-- Ticketmaster Button -->
+  <div class="container text-center" id="ticketmaster_button">
+    <button type="button" id="getArtists" class="btn btn-primary mb-2"><img src="assets/images/ticketmaster_logo.png"
+        class="center" width="300" height="130" alt="Ticketek_logo"></button>
+  </div>
 
-    <!-- Ticketmaster Button -->
-    <div class="container text-center" id="ticketmaster_button">
-      <button type="button" id="getArtists" class="btn btn-primary mb-2"><img src="assets/images/ticketmaster_logo.png"
-          class="center" width="300" height="130" alt="Ticketek_logo" /></button>
+  <!-- Ticketmaster Results -->
+  <div class="animatedParent container">
+    <div id="ticketmaster_results" class="">
+      <div id="showArtistEvent" class="row"></div>
     </div>
+  </div>
 
-    <!-- Ticketmaster Results -->
-    <div class="animatedParent">
-      <div id="ticketmaster_results" class="">
-        <div id="showArtistEvent" class="row"></div>
-      </div>
-
+  <!-- <div class="card container" style="width: 18rem;">
+    <img class="card-img-top" src="https://media.wired.com/photos/598e35fb99d76447c4eb1f28/master/pass/phonepicutres-TA.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     </div>
+  </div> -->
+
     <!-- Search Bar -->
     <div class="container" id="search_bar">
       <div class="row">
@@ -115,7 +123,7 @@
     </div>
   </div>
   <!-- Favourites-->
-  <div class="col-sm-4" style="text-align: center">
+  <div class="col-lg-12" style="text-align: center">
     <div>
       <h4 class="favorites">Favorites!</h4><button class="btn btn-secondary btn-space" id="clearFavs">Clear</button>
       <div id="eventFavs">
@@ -127,16 +135,7 @@
 
   <footer class="footer">
     <div>
-      <span>&copy; Copyright 2019 <br>Along Came Polly<br>Spotify<br>Ticketmaster</bnr></span>
-      
-    </div>
-
-  </div>
-  <!-- Richard 09/08/2019 end favourites-->
-  <footer class="footer">
-    <div>
-      <span>&copy; Copyright 2019 <br>Along Came Polly<br>Spotify<br>Ticketmaster</bnr></span>
-
+      <span>&copy; Copyright 2019 <br>Along Came Polly<br>Spotify<br>Ticketmaster</bnr></span>˜
     </div>
   </footer>
 
