@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html>
-
 <head lang="en">
   <meta charset="UTF-8" />
   <title>Festivals 4 You</title>
-  <!-- reset.css -->
   <link rel="stylesheet" type="text/css" href="assets/css/reset.css" />
   <!-- jquery -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -30,121 +28,106 @@
   <link rel="stylesheet" href="assets/css/animations.css" type="text/css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css?family=Hind+Guntur&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Syncopate:400,700&display=swap" rel="stylesheet">
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/57944e1645.js"></script>
-</head>
-
-<body>
   <!-- Link to Moment.js should go here -->
   <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-  <!-- Banner Video -->
-  <div class="BackgroundVideo">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920px" height="1080px"
-      preserveAspectRatio="xMidYMid slice">
-      <defs>
-        <mask id="mask" x="0" y="0" width="1920" height="1080">
-          <rect x="0" y="0" width="1920" height="1080" />
-          <text x="840" y="1em">Festivals</text>
-          <text x="1600" y="85%">4U</text>
-        </mask>
-      </defs>
-      <rect x="0" y="0" width="1920" height="1080" />
-    </svg>
-    <video autoplay loop muted>
-      <source src="assets/images/banner_video_light.mov" />
-    </video>
-  </div>
+</head>
+<body>
 
-  <!-- Spotify Button -->
-  <article class="spotify_banner">
-    <h3>
-      Never miss an event again
-    </h3>
-    <br>
-    <form class="text-center">
-      <button type="submit" id="spotify" class="mb-2"><img src="assets/images/connect.png" class="center" width="350"
-          height="60" alt="Spotify_logo" /></button>
-    </form>
-    <br>
-    <h3>
-      and we will do the rest...
-    </h3>
-  </article>
-  <br>
-  <br>
-  <!-- Spotify Results -->
-  <div class="spotify_results animatedParent">
-    <div class="row animated bounceInUp">
-      <div class="col-sm">
-        <ol id="top-artists"></ol>
+  <div class="wrapper">
+    <div class="wrapper__content">
+
+      <!-- Hero  -->
+      <div class="hero">
+        <div class="hero-col-a">
+          <h1>Festivals 4U</h1>
+        </div>
+        <div class="hero-col-b">
+          <p>Never miss an event again</p>
+          <form class="text-center">
+            <button type="submit" id="spotify" class="mb-2">
+              <img src="assets/images/connect.png" class="center" width="350" height="60" alt="Spotify_logo" />
+              </button>
+          </form>
+          <p>and we will do the rest ...</p>
+        </div>
       </div>
-      <div class="col-sm">
-        <ol id="top-tracks"></ol>
-      </div>
-    </div>
-  </div>
 
-  <!-- Ticketmaster Button -->
-  <div class="container text-center" id="ticketmaster_button">
-    <button type="button" id="getArtists" class="btn btn-primary mb-2"><img src="assets/images/ticketmaster_logo.png"
-        class="center" width="300" height="130" alt="Ticketek_logo"></button>
-  </div>
-
-  <!-- Ticketmaster Results -->
-  <div class="animatedParent container">
-    <div id="ticketmaster_results" class="">
-      <div id="showArtistEvent" class="row"></div>
-    </div>
-  </div>
-
-  <!-- <div class="card container" style="width: 18rem;">
-    <img class="card-img-top" src="https://media.wired.com/photos/598e35fb99d76447c4eb1f28/master/pass/phonepicutres-TA.jpg" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    </div>
-  </div> -->
-
-    <!-- Search Bar -->
-    <div class="container" id="search_bar">
-      <div class="row">
-        <div class="input-group mb-3 col-md-12">
-          <input type="text" id="artistSearchInput" class="form-control" placeholder="For more events, search here"
-            aria-label="search here" aria-describedby="button-addon2" />
-          <div class="input-group-append">
-            <input id="findEvent" type="submit" value="Find Event" />
+      <!-- Spotify Results -->
+      <div class="spotify__results">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <h2>Based on your top artists</h2>
+              <ol id="top-artists"></ol>
+            </div>
+            <div class="col-md-6">
+              <h2>Based on your top tracks</h2>
+              <ol id="top-tracks"></ol>
+            </div>
           </div>
         </div>
-        <div class="row">
-          <div id="displaySearchResult" class="row"></div>
+      </div>
+
+      <!-- Ticketmaster -->
+      <div class="ticketmaster__results">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <h2>Ticketmaster search based on your favourite music.</h2>
+              <form id="ticketMasterSearch">
+                <div class="input-group">
+                  <input type="text" id="artistSearchInput" class="form-control" placeholder="For more events, search here" aria-label="search here" aria-describedby="button-addon2" />
+                  <div class="input-group-append">
+                    <input class="btn btn-primary" id="findEvent" type="submit" value="Find Event" />
+                  </div>
+                </div>
+              </form>
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div id="displaySearchResult">
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-  <!-- Favourites-->
-  <div class="col-lg-12" style="text-align: center">
-    <div>
-      <h4 class="favorites">Favorites!</h4><button class="btn btn-secondary btn-space" id="clearFavs">Clear</button>
-      <div id="eventFavs">
 
+      <!-- Favourites -->
+      <div class="favourites__results">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <h2>Favourites</h2>
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div id="displayFavouritesResult">
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-  </div>
-  </div>
-  </div>
 
-  <footer class="footer">
-    <div>
-      <span>&copy; Copyright 2019 <br>Along Came Polly<br>Spotify<br>Ticketmaster</bnr></span>˜
     </div>
-  </footer>
+
+
+    <!-- Banner Video -->
+    <div class="bg_video">
+      <div class="bg_video_scanlines"></div>
+      <video autoplay loop muted>
+        <source src="assets/images/small.mp4" />
+      </video>
+    </div>
+  </div>
 
   <!-- Javascript files -->
-  <script src="./assets/js/spotify.js"></script>
-  <script src="./assets/js/ticketmaster.js"></script>
-  <script src="./assets/js/animate.js"></script>
-  <script src="./assets/js/firebase.js"></script>
-
+  <script src="./assets/js/index.js"></script>
 </body>
-
 </html>

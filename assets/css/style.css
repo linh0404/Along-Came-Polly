@@ -1,152 +1,248 @@
-.BackgroundVideo {
-  position: absolute;
-  width: 100vw;
-  height: 70vh;
+html,
+body {
   overflow: hidden;
-  top: 0;
-  left: 0;
-  right: 0;
+  height: 100%;
+  width: 100%;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
 }
 
-.BackgroundVideo video {
-  width: 100vw;
+.bg_video,
+.wrapper {
   position: absolute;
-  top: -40px;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.wrapper__content {
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+  position: relative;
+}
+
+body.result .wrapper__content {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.bg_video {
   z-index: 1;
 }
 
-.BackgroundVideo svg {
-  width: 100%;
-  height: 100%;
+.bg_video video {
   position: absolute;
-  z-index: 2;
+  width: 260vmax;
+  height: 120vmax;
+  z-index: 1;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-.BackgroundVideo svg text {
-  text-anchor: middle;
-}
-
-.BackgroundVideo svg mask rect {
-  fill: rgba(255, 255, 255, 0.7);
-}
-
-.BackgroundVideo svg > rect {
-  fill: #000;
-  -webkit-mask: url(#mask);
-  mask: url(#mask);
-  opacity: 0.75;
-}
-
-.BackgroundVideo svg text {
-  font-family: "Hind Guntur", sans-serif;
-  font-weight: 800;
-  font-size: 35em;
-  letter-spacing: -0.09em;
-  height: 100%;
-}
-
-.spotify_banner {
-  position: relative;
-  z-index: 2;
-  max-width: 1080px;
-  padding-top: 230px;
-  margin: 50vh auto 20px auto;
-}
-
-.artist-image {
-  width: 500px;
-  height: auto;
-}
-
-body {
-  background-color: #151515;
-}
-
-h3,
-h4,
-p,
-li {
-  font-family: "Hind Guntur", sans-serif;
-  color: white;
-  text-align: center;
-}
-
-p {
-  font-family: "Hind Guntur", sans-serif;
-  font-weight: bold;
-}
-
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#spotify,
-#getArtists {
-  background-color: rgba(0, 0, 0, 0);
-  border: none;
-  outline: none !important;
-  box-shadow: none;
-  text-decoration: none;
-}
-
-.animated {
-  padding: 20px 0px;
-  margin: 0px;
-}
-
-#event-image {
-  width: 500px;
-  height: auto;
-}
-
-.spotify_results {
-  background-color: #151515;
-  color: white;
-  padding: 20px;
-}
-
-#search_bar {
-  padding: 20px;
-}
-
-#ticketmaster_results img,
-#displaySearchResult img {
-  width: 100%;
-  padding: 20px;
-}
-
-.container ticketmaster_button {
-  background-color: #02ade5;
-  padding: 0;
-  margin: 0;
-}
-
-footer {
-  padding: 20px 0;
-  margin: 0;
-  font-size: 12px;
-  color: #ffffff;
-  text-align: center;
-  background: black;
-  height: 90px;
-  display: block;
-  position: relative;
+.bg_video_scanlines {
+  position: absolute;
+  top: 0;
+  right: 0;
   bottom: 0;
+  left: 0;
+  z-index: 2;
+  background-image: repeating-linear-gradient(rgba(0,0,0,.85), rgba(0,0,0,.85) 1px, rgba(0,0,0,.3) 2px, rgba(0,0,0,.3) 2px);
+}
+
+.hero {
+  width: 100vw;
+  height: 100vh;
+}
+
+.hero-col-a {
+  color: #fff;
   width: 100%;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.fa-2x {
-  color: #bf1025;
-  size: 10px;
+.hero-col-b {
+  background-color: rgba(0,0,0,.4);
+  -webkit-backdrop-filter: blur(10px);
+  color: #111;
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.card p{
-  color: white;
+.hero h1 {
+  font-family: Syncopate, "Open Sans", sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  text-align: center;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .hero h1 {
+    font-size: 48px;
+  }
+}
+
+.hero p {
+  letter-spacing: 1px;
+  font-weight: 300;
+  color: #f5f5f5;
+}
+
+.hero form {
+  display: block;
+  margin: 20px;
+}
+
+.hero button {
+  max-width: 100%;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.hero button img {
+  max-width: 100%;
+}
+
+
+.spotify__results {
+  background: rgba(0,0,0,.55);
+  color: #f5f5f5;
+  padding: 60px 0;
+}
+
+.spotify__results h2 {
+  font-family: Syncopate, "Open Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  display: block;
+}
+
+.spotify__results ol {
+  min-height: 450px;
+}
+
+.spotify__results ol li {
+  display: block;
+  font-family: "Open Sans", sans-serif;
+  font-size: 13px;
+  letter-spacing: 1px;
+  line-height: 20px;
+  margin: 0 0 1px 0;
+  color: #fff;
+}
+
+.spotify__results ol li:nth-child(1) { opacity: 1; }
+.spotify__results ol li:nth-child(2) { opacity: .97; }
+.spotify__results ol li:nth-child(3) { opacity: .94; }
+.spotify__results ol li:nth-child(4) { opacity: .91; }
+.spotify__results ol li:nth-child(5) { opacity: .88; }
+.spotify__results ol li:nth-child(6) { opacity: .85; }
+.spotify__results ol li:nth-child(7) { opacity: .82; }
+.spotify__results ol li:nth-child(8) { opacity: .79; }
+.spotify__results ol li:nth-child(9) { opacity: .76; }
+.spotify__results ol li:nth-child(10) { opacity: .73; }
+.spotify__results ol li:nth-child(11) { opacity: .70; }
+.spotify__results ol li:nth-child(12) { opacity: .67; }
+.spotify__results ol li:nth-child(13) { opacity: .64; }
+.spotify__results ol li:nth-child(14) { opacity: .61; }
+.spotify__results ol li:nth-child(15) { opacity: .58; }
+.spotify__results ol li:nth-child(16) { opacity: .55; }
+.spotify__results ol li:nth-child(17) { opacity: .52; }
+.spotify__results ol li:nth-child(18) { opacity: .49; }
+.spotify__results ol li:nth-child(19) { opacity: .46; }
+.spotify__results ol li:nth-child(20) { opacity: .43; }
+
+.ticketmaster__results {
+  background: #fff;
+  padding: 60px 0;
+}
+
+.ticketmaster__results h2 {
+  font-family: Syncopate, "Open Sans", sans-serif;
+  font-size: 18px;
+  line-height: 32px;
+  font-weight: 600;
+  display: block;
+  margin: 0 0 20px 0;
+}
+
+#displaySearchResult {
+  margin: 30px 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 30px;
+}
+
+@media (min-width: 768px) {
+  #displaySearchResult {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1280px) {
+  #displaySearchResult {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.favourites__results {
+  background: #f5f5f5;
+  padding: 60px 0;
+}
+
+.favourites__results h2 {
+  font-family: Syncopate, "Open Sans", sans-serif;
+  font-size: 18px;
+  line-height: 32px;
+  font-weight: 600;
+  display: block;
+  margin: 0 0 20px 0;
+}
+
+#displayFavouritesResult {
+  margin: 30px 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 30px;
+}
+
+@media (min-width: 768px) {
+  #displayFavouritesResult {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1280px) {
+  #displayFavouritesResult {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.card-event .event-time {
+  font-size: 12px;
+  text-align: right;
+}
+
+.card-event .event-venue {
+  font-size: 13px;
+  text-align: left;
+}
+
+.card-event .event-venue strong {
+  font-weight: bold;
+  display: block;
 }
