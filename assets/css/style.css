@@ -118,9 +118,7 @@ p {
 
 #ticketmaster_results img,
 #displaySearchResult img {
-  max-height: 300px;
-  height: 70%;
-  width: auto;
+  width: 100%;
   padding: 20px;
 }
 
@@ -147,4 +145,8 @@ footer {
 .fa-2x {
   color: #bf1025;
   size: 10px;
+}
+
+.card p{
+  color: white;
 }

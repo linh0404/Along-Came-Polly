@@ -58,7 +58,8 @@ $(document).ready(function() {
 
   // create on clicks to add favourites
   $(document).on("click", ".fa", function() {
-    var eventFav = $(this).attr("span-image");
+    var eventFav = $(this).parent().find('.artist-image').attr('src');
+    console.log(eventFav);
     favs.push(eventFav);
     renderFavs(favs);
     localStorage.setItem("favs-array", JSON.stringify(favs));
