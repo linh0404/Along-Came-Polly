@@ -1,7 +1,7 @@
 (function(window, document) {
   // Replace with your app's client ID, redirect URI and desired scopes
   const SPOTIFY_CLIENTID = "8eb9c5f7f3b048bc9184193d33afdc96";
-  const SPOTIFY_REDIRECTURI = "http://localhost:8080";
+  const SPOTIFY_REDIRECTURI = "https://linh0404.github.io/Along-Came-Polly";
   const SPOTIFY_SCOPES = ["user-top-read", "user-read-recently-played"];
   // Replace with your ticket mater api key
   const TICKETMASTER_APIKEY = "COsXEH07ztMABw0SgNFNxALf8IefVSt3";
